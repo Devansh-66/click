@@ -24,7 +24,7 @@ if [ -z "$OUTPUT" ]; then
 fi
 
 if [ "$MODE" = "base" ]; then
-  pytest tests/test_types.py --junitxml="$OUTPUT"
+  pytest tests/test_context.py --junitxml="$OUTPUT"
 else
-  pytest tests/test_choice_canonical.py --junitxml="$OUTPUT"
+  pytest tests/test_resilient_defaults.py --junitxml="$OUTPUT"
 fi
