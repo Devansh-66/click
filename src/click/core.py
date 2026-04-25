@@ -2934,6 +2934,9 @@ class Option(Parameter):
             boolean flags, fixing negative boolean flags like
             ``flag_value=False, default=True``.
         """
+        if ctx is not None and ctx.resilient_parsing:
+            call = False
+            
         value = super().get_default(ctx, call=False)
 
         # Resolve default=True to flag_value lazily (here instead of
